@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maísa Evangelista — Estética Clínica Facial e Corporal a Domicílio | Criciúma</title>
+<meta name="description" content="Fisioterapeuta Dermatofuncional em Criciúma/SC. Atendimento exclusivo a domicílio: peelings, microagulhamento, limpeza de pele e drenagem linfática com base clínica.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  /* Paleta extraída da logo */
+  --rose-deep: #8B4A4A;
+  --rose: #B07574;
+  --rose-light: #D4A3A1;
+  --rose-muted: #E8CFCE;
+  --nude-bg: #FAF6F2;
+  --beige: #F0E4DC;
+  --beige-deep: #E5D5C8;
+  --ink: #2A1F1F;
+  --ink-soft: #4A3838;
+  --ink-mute: #7A6868;
+  --sage: #9CAA92;
+  --line: rgba(139, 74, 74, 0.15);
+
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Manrope', system-ui, sans-serif;
+
+  --max: 1200px;
+  --pad: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  font-weight: 400;
+  background: var(--nude-bg);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+
+/* ====== TYPOGRAPHY ====== */
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--rose);
+}
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 4.75rem); }
+h2 { font-size: clamp(2rem, 4.5vw, 3.5rem); }
+h3 { font-size: clamp(1.25rem, 2vw, 1.625rem); }
+
+h1 em, h2 em {
+  font-style: italic;
+  color: var(--rose);
+  font-weight: 300;
+}
+
+p { color: var(--ink-soft); }
+
+/* ====== LAYOUT HELPERS ====== */
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+section {
+  padding: clamp(4rem, 9vw, 7rem) 0;
+  position: relative;
+}
+
+/* ====== HEADER ====== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.25rem var(--pad);
+  background: rgba(250, 246, 242, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.header.scrolled {
+  border-bottom-color: var(--line);
+}
+
+.header-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.brand-text {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+
+.brand-text span {
+  display: block;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.nav {
+  display: flex;
+  gap: 2.25rem;
+  align-items: center;
+}
+
+.nav a {
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.nav a:hover { color: var(--rose); }
+
+.nav-cta {
+  background: var(--ink);
+  color: var(--nude-bg) !important;
+  padding: 0.625rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.8125rem !important;
+  transition: background 0.2s ease !important;
+}
+
+.nav-cta:hover { background: var(--rose-deep); color: var(--nude-bg) !important; }
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--ink);
+}
+
+@media (max-width: 820px) {
+  .nav { display: none; }
+  .menu-toggle { display: block; }
+  .nav.open {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--nude-bg);
+    padding: 1.5rem var(--pad) 2rem;
+    gap: 1.25rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .nav.open a { padding: 0.5rem 0; }
+}
+
+/* ====== HERO ====== */
+.hero {
+  padding-top: clamp(7rem, 14vw, 9rem);
+  padding-bottom: clamp(4rem, 8vw, 6rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: -10%;
+  width: 50vw;
+  max-width: 700px;
+  aspect-ratio: 1;
+  background: radial-gradient(circle at center, var(--rose-muted) 0%, transparent 65%);
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 820px) {
+  .hero-grid { grid-template-columns: 1fr; }
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-eyebrow::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: var(--rose);
+}
+
+.hero h1 {
+  margin-bottom: 1.75rem;
+}
+
+.hero-sub {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  color: var(--ink-soft);
+  max-width: 32rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 1rem 1.75rem;
+  border-radius: 999px;
+  font-family: var(--sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  cursor: pointer;
+  border: none;
+  letter-spacing: 0.01em;
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--nude-bg);
+}
+
+.btn-primary:hover {
+  background: var(--rose-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -10px rgba(139, 74, 74, 0.45);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+
+.btn-ghost:hover {
+  background: var(--ink);
+  color: var(--nude-bg);
+}
+
+.hero-trust {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.trust-number {
+  font-family: var(--serif);
+  font-size: 1.75rem;
+  font-style: italic;
+  color: var(--rose-deep);
+  line-height: 1;
+}
+
+.trust-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.hero-visual {
+  position: relative;
+  aspect-ratio: 4/5;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-visual::before {
+  content: "";
+  position: absolute;
+  inset: -8% -4% -4% -8%;
+  background: linear-gradient(135deg, var(--beige) 0%, var(--rose-muted) 100%);
+  border-radius: 280px 280px 220px 220px / 320px 320px 240px 240px;
+  z-index: 0;
+}
+
+.hero-photo-wrap {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  aspect-ratio: 4/5;
+  border-radius: 240px 240px 200px 200px / 280px 280px 220px 220px;
+  overflow: hidden;
+  box-shadow: 0 32px 64px -20px rgba(139, 74, 74, 0.32);
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+.hero-tag {
+  position: absolute;
+  background: var(--nude-bg);
+  border: 1px solid var(--line);
+  padding: 0.75rem 1.125rem;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 2;
+  box-shadow: 0 12px 28px -14px rgba(42, 31, 31, 0.18);
+}
+
+.hero-tag::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--sage);
+  border-radius: 50%;
+}
+
+.hero-tag.tag-1 { top: 8%; left: -6%; }
+.hero-tag.tag-2 { bottom: 12%; right: -4%; }
+
+@media (max-width: 820px) {
+  .hero-tag.tag-1 { top: 4%; left: 2%; }
+  .hero-tag.tag-2 { bottom: 4%; right: 2%; }
+}
+
+/* ====== PARA QUEM É ====== */
+.para-quem {
+  background: var(--nude-bg);
+}
+
+.para-quem-head {
+  text-align: center;
+  max-width: 38rem;
+  margin: 0 auto clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.para-quem-head .eyebrow {
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.para-quem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.pq-card {
+  display: flex;
+  gap: 1.125rem;
+  padding: 1.5rem 1.625rem;
+  background: var(--beige);
+  border-radius: 4px;
+  border-left: 2px solid var(--rose);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.pq-card:hover {
+  background: var(--beige-deep);
+  transform: translateX(4px);
+}
+
+.pq-icon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--nude-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rose);
+}
+
+.pq-card p {
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+/* ====== SOBRE ====== */
+.sobre {
+  background: var(--beige);
+  position: relative;
+}
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+}
+
+@media (max-width: 820px) {
+  .sobre-grid { grid-template-columns: 1fr; }
+}
+
+.sobre-image {
+  position: relative;
+  aspect-ratio: 4/5;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 32px 64px -24px rgba(139, 74, 74, 0.25);
+}
+
+.sobre-image-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.sobre-badge {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  background: rgba(250, 246, 242, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 1.25rem 1.5rem;
+  border-radius: 4px;
+  border-left: 3px solid var(--rose);
+}
+
+.sobre-badge-label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 0.375rem;
+}
+
+.sobre-badge-title {
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  font-style: italic;
+  color: var(--ink);
+}
+
+.sobre h2 {
+  margin: 1.25rem 0 1.5rem;
+}
+
+.sobre p {
+  margin-bottom: 1rem;
+  font-size: 1.0625rem;
+}
+
+.credentials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 480px) {
+  .credentials { grid-template-columns: 1fr; }
+}
+
+.credential {
+  padding: 1.125rem 1.25rem;
+  background: rgba(250, 246, 242, 0.6);
+  border-radius: 4px;
+  border-left: 2px solid var(--rose);
+}
+
+.credential-label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 0.25rem;
+}
+
+.credential-value {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+/* ====== SERVIÇOS ====== */
+.servicos-head {
+  text-align: center;
+  max-width: 38rem;
+  margin: 0 auto clamp(3rem, 6vw, 4.5rem);
+}
+
+.servicos-head .eyebrow { margin-bottom: 1rem; display: inline-block; }
+.servicos-head p { margin-top: 1.25rem; }
+
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.servico {
+  background: var(--nude-bg);
+  border: 1px solid var(--line);
+  padding: 2.25rem 1.875rem;
+  border-radius: 4px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.servico:hover {
+  transform: translateY(-4px);
+  border-color: var(--rose);
+  box-shadow: 0 24px 48px -24px rgba(139, 74, 74, 0.25);
+}
+
+.servico-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.875rem;
+  color: var(--rose);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.servico h3 {
+  margin-bottom: 0.875rem;
+}
+
+.servico p {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.servico-tag {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  width: 100%;
+}
+
+.servico-destaque {
+  background: linear-gradient(180deg, var(--nude-bg) 0%, var(--beige) 100%);
+  border-color: var(--rose-light);
+}
+
+.servico-destaque::after {
+  content: "Especialidade";
+  position: absolute;
+  top: 1.5rem;
+  left: 1.875rem;
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  font-weight: 600;
+}
+
+.servico-destaque .servico-num {
+  margin-top: 1rem;
+}
+
+.servico-icon {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 24px;
+  height: 24px;
+  opacity: 0.35;
+  color: var(--rose);
+}
+
+/* ====== DEPOIMENTOS ====== */
+.depoimentos {
+  background: linear-gradient(180deg, var(--nude-bg) 0%, var(--beige) 100%);
+}
+
+.depoimentos-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3.5rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.depoimentos-head h2 { max-width: 28rem; }
+
+.google-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.125rem;
+  background: var(--nude-bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+}
+
+.google-badge .stars {
+  color: #F5A623;
+  letter-spacing: 0.1em;
+}
+
+.depoimentos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.depoimento {
+  background: var(--nude-bg);
+  padding: 2rem 1.875rem;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+}
+
+.depoimento::before {
+  content: "“";
+  position: absolute;
+  top: -0.5rem;
+  left: 1.5rem;
+  font-family: var(--serif);
+  font-size: 5rem;
+  color: var(--rose-muted);
+  line-height: 1;
+  font-style: italic;
+}
+
+.depoimento-stars {
+  color: #F5A623;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  position: relative;
+  z-index: 1;
+}
+
+.depoimento-text {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.depoimento-author {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--rose-light), var(--rose));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--nude-bg);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.author-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.author-meta {
+  font-size: 0.75rem;
+  color: var(--ink-mute);
+}
+
+/* ====== FAQ ====== */
+.faq {
+  background: var(--nude-bg);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+@media (max-width: 820px) {
+  .faq-grid { grid-template-columns: 1fr; }
+}
+
+.faq-side h2 { margin: 1rem 0 1.25rem; }
+.faq-side p { margin-bottom: 2rem; }
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.faq-item {
+  background: var(--beige);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.faq-item[open] { background: var(--beige-deep); }
+
+.faq-item summary {
+  padding: 1.375rem 1.625rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--serif);
+  font-size: 1.1875rem;
+  font-style: italic;
+  color: var(--ink);
+  transition: color 0.2s ease;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover { color: var(--rose-deep); }
+
+.faq-toggle {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--nude-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rose);
+  transition: transform 0.3s ease, background 0.3s ease;
+  font-size: 1rem;
+  font-style: normal;
+  font-family: var(--sans);
+  font-weight: 300;
+}
+
+.faq-item[open] .faq-toggle {
+  transform: rotate(45deg);
+  background: var(--rose);
+  color: var(--nude-bg);
+}
+
+.faq-content {
+  padding: 0 1.625rem 1.625rem;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+/* ====== LOCALIZAÇÃO ====== */
+.local {
+  background: var(--ink);
+  color: var(--nude-bg);
+}
+
+.local h2 { color: var(--nude-bg); }
+.local p { color: rgba(250, 246, 242, 0.75); }
+.local .eyebrow { color: var(--rose-light); }
+
+.local-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+}
+
+@media (max-width: 820px) {
+  .local-grid { grid-template-columns: 1fr; }
+}
+
+.local h2 { margin: 1rem 0 1.5rem; }
+.local h2 em { color: var(--rose-light); }
+
+.info-block {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.info-item {
+  display: flex;
+  gap: 1.125rem;
+  align-items: flex-start;
+}
+
+.info-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(176, 117, 116, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rose-light);
+}
+
+.info-label {
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose-light);
+  margin-bottom: 0.25rem;
+}
+
+.info-value {
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  font-style: italic;
+  color: var(--nude-bg);
+  line-height: 1.4;
+}
+
+.info-value a {
+  color: var(--nude-bg);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(212, 163, 161, 0.4);
+  transition: border-color 0.2s ease;
+}
+
+.info-value a:hover { border-color: var(--rose-light); }
+
+.local-cta {
+  background: rgba(176, 117, 116, 0.12);
+  border: 1px solid rgba(212, 163, 161, 0.25);
+  border-radius: 4px;
+  padding: 2.25rem;
+  text-align: center;
+}
+
+.local-cta h3 {
+  color: var(--nude-bg);
+  font-style: italic;
+  font-size: 1.625rem;
+  margin-bottom: 0.875rem;
+}
+
+.local-cta h3 em { color: var(--rose-light); }
+
+.local-cta p {
+  margin-bottom: 2rem;
+  font-size: 0.9375rem;
+}
+
+.btn-whatsapp {
+  background: var(--rose);
+  color: var(--nude-bg);
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-whatsapp:hover {
+  background: var(--rose-light);
+  color: var(--ink);
+}
+
+/* ====== FLOATING WHATSAPP ====== */
+.float-wa {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 90;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--rose-deep);
+  color: var(--nude-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 32px -8px rgba(139, 74, 74, 0.55);
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.float-wa:hover {
+  transform: scale(1.08);
+  background: var(--rose);
+}
+
+.float-wa::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: var(--rose);
+  z-index: -1;
+  opacity: 0.4;
+  animation: pulse 2.4s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.4; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* ====== FOOTER ====== */
+.footer {
+  background: var(--ink);
+  color: rgba(250, 246, 242, 0.55);
+  padding: 2.5rem var(--pad);
+  border-top: 1px solid rgba(250, 246, 242, 0.08);
+  text-align: center;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+}
+
+.footer-divider {
+  width: 32px;
+  height: 1px;
+  background: var(--rose);
+  margin: 0 auto 1.5rem;
+}
+
+/* ====== ANIMAÇÕES DE ENTRADA ====== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001s !important;
+    transition-duration: 0.001s !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="#" class="brand">
+      <img src="assets/icone.jpg" alt="" class="brand-mark">
+      <span class="brand-text">
+        Maísa Evangelista
+        <span>Fisioterapeuta Dermatofuncional</span>
+      </span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Tratamentos</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1%20Ma%C3%ADsa%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" rel="noopener" class="nav-cta">Quero agendar</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="hero-eyebrow">
+        <span class="eyebrow">Criciúma · SC · Atendimento exclusivo a domicílio</span>
+      </div>
+      <h1>A estética clínica que <em>vai até você</em> — para uma pele cuidada com profundidade.</h1>
+      <p class="hero-sub">Tratamentos faciais e corporais conduzidos por uma fisioterapeuta dermatofuncional, no conforto da sua casa. Sem deslocamento, sem sala de espera, sem expor sua pele recém-tratada ao sol da volta.</p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1%20Ma%C3%ADsa%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" rel="noopener" class="btn btn-primary">
+          Quero agendar minha avaliação
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#servicos" class="btn btn-ghost">Conhecer os tratamentos</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <span class="trust-number">7+</span>
+          <span class="trust-label">Anos cuidando de peles em Criciúma</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-number">100%</span>
+          <span class="trust-label">No conforto do seu lar</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-number">1:1</span>
+          <span class="trust-label">Atenção exclusiva por sessão</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <span class="hero-tag tag-1">Atendimento individualizado</span>
+      <div class="hero-photo-wrap">
+        <img src="assets/foto-hero.png" alt="Maísa Evangelista, fisioterapeuta dermatofuncional" class="hero-photo">
+      </div>
+      <span class="hero-tag tag-2">No conforto da sua casa</span>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM É -->
+<section class="para-quem">
+  <div class="container">
+    <div class="para-quem-head reveal">
+      <span class="eyebrow">Para quem é</span>
+      <h2>Você reconhece <em>alguma dessas</em>?</h2>
+    </div>
+    <div class="para-quem-grid">
+      <div class="pq-card reveal">
+        <div class="pq-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M9 10c0-.55.45-1 1-1M14 10c0-.55.45-1 1-1M9 15c.83.5 1.83.75 3 .75s2.17-.25 3-.75"/></svg>
+        </div>
+        <p>Sua pele tem cravos, oleosidade ou aquele aspecto cansado que produto de prateleira não resolve.</p>
+      </div>
+      <div class="pq-card reveal">
+        <div class="pq-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>
+        </div>
+        <p>Manchas, melasma ou marcas de acne que insistem em aparecer toda vez que você se olha no espelho.</p>
+      </div>
+      <div class="pq-card reveal">
+        <div class="pq-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 14c4-2 8-2 12 0M4 18c4-2 8-2 12 0M4 10c4-2 8-2 12 0"/></svg>
+        </div>
+        <p>Inchaço, sensação de peso ou recuperação de cirurgia plástica que pede drenagem feita por quem sabe.</p>
+      </div>
+      <div class="pq-card reveal">
+        <div class="pq-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-6 9 6v11a2 2 0 0 1-2 2h-4v-7h-6v7H5a2 2 0 0 1-2-2z"/></svg>
+        </div>
+        <p>Falta tempo, agenda apertada, ou você simplesmente prefere ser cuidada sem precisar sair de casa.</p>
+      </div>
+      <div class="pq-card reveal">
+        <div class="pq-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <p>Você já teve experiência ruim em salão de beleza e quer alguém com formação clínica de verdade cuidando da sua pele.</p>
+      </div>
+      <div class="pq-card reveal">
+        <div class="pq-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v6M12 22v-6M4.93 4.93l4.24 4.24M19.07 19.07l-4.24-4.24M2 12h6M22 12h-6"/></svg>
+        </div>
+        <p>Você quer cuidar da pele com seriedade — não trocando de promessa milagrosa toda semana, mas com um plano de verdade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="sobre" id="sobre">
+  <div class="container sobre-grid">
+    <div class="sobre-image reveal">
+      <img src="assets/foto-sobre.png" alt="Maísa atendendo uma cliente" class="sobre-image-photo">
+      <div class="sobre-badge">
+        <div class="sobre-badge-label">Especialização</div>
+        <div class="sobre-badge-title">Fisioterapia Dermatofuncional e Cosmetologia</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Conheça a Maísa</span>
+      <h2>Uma fisioterapeuta dermatofuncional <em>que cuida da sua pele como ninguém olhou antes</em>.</h2>
+      <p>Há sete anos cuido da pele de mulheres em Criciúma — algumas começaram comigo querendo se livrar de uma marca de acne, outras vieram pra drenar depois de uma cirurgia, e várias hoje voltam toda estação só porque entenderam o que é ser cuidada com atenção de verdade.</p>
+      <p>Escolhi atender exclusivamente em domicílio porque acredito que cuidar da pele não deveria ser mais uma corrida na sua agenda. Levo até você toda a estrutura, os materiais e os protocolos de higiene de um atendimento clínico — para que o seu tempo de cuidado seja, antes de tudo, um tempo seu.</p>
+      <div class="credentials">
+        <div class="credential">
+          <div class="credential-label">Registro profissional</div>
+          <div class="credential-value">CREFITO [número]</div>
+        </div>
+        <div class="credential">
+          <div class="credential-label">Formação</div>
+          <div class="credential-value">Fisioterapia · 5 anos</div>
+        </div>
+        <div class="credential">
+          <div class="credential-label">Especialização</div>
+          <div class="credential-value">Dermatofuncional · 388h</div>
+        </div>
+        <div class="credential">
+          <div class="credential-label">Experiência</div>
+          <div class="credential-value">7+ anos atendendo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="servicos" id="servicos">
+  <div class="container">
+    <div class="servicos-head reveal">
+      <span class="eyebrow">Tratamentos</span>
+      <h2>Para cada queixa, um <em>plano feito para você</em>.</h2>
+      <p>Nada de pacote pronto. Toda jornada começa com uma avaliação — a partir do que você vive na sua pele e do que quer alcançar, monto um protocolo com sessões definidas e orientação de cuidado em casa.</p>
+    </div>
+    <div class="servicos-grid">
+
+      <article class="servico reveal">
+        <svg class="servico-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M8 12c1.5-2 6.5-2 8 0"/><circle cx="9" cy="10" r="0.5" fill="currentColor"/><circle cx="15" cy="10" r="0.5" fill="currentColor"/></svg>
+        <span class="servico-num">01</span>
+        <h3>Pele oleosa, cravos, aspecto cansado</h3>
+        <p>Uma sessão para retirar o que cremes não alcançam: cravos, células mortas e impurezas acumuladas. Você sai com a pele leve, viva e pronta pra absorver tudo que vier depois.</p>
+        <span class="servico-tag">Limpeza de pele profunda</span>
+      </article>
+
+      <article class="servico reveal">
+        <svg class="servico-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M5.6 18.4l12.8-12.8"/></svg>
+        <span class="servico-num">02</span>
+        <h3>Tom irregular, marcas, melasma</h3>
+        <p>Renovação celular controlada que clareia manchas, suaviza marcas e devolve uniformidade ao tom da pele. O ativo é escolhido conforme o que sua pele realmente precisa — e suporta.</p>
+        <span class="servico-tag">Peeling químico</span>
+      </article>
+
+      <article class="servico reveal">
+        <svg class="servico-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="6" r="1"/><circle cx="12" cy="6" r="1"/><circle cx="18" cy="6" r="1"/><circle cx="6" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="18" cy="12" r="1"/><circle cx="6" cy="18" r="1"/><circle cx="12" cy="18" r="1"/><circle cx="18" cy="18" r="1"/></svg>
+        <span class="servico-num">03</span>
+        <h3>Cicatrizes de acne, flacidez, rugas finas</h3>
+        <p>O estímulo certo para o colágeno voltar a trabalhar para você. Resultado progressivo, sessão por sessão — a pele que você reconhece no espelho, só que firme e renovada.</p>
+        <span class="servico-tag">Microagulhamento</span>
+      </article>
+
+      <article class="servico reveal">
+        <svg class="servico-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8 6 6 9 6 13a6 6 0 0 0 12 0c0-4-2-7-6-11z"/></svg>
+        <span class="servico-num">04</span>
+        <h3>Manchas de sol, pós-acne, hipercromias</h3>
+        <p>Protocolos combinados para devolver luminosidade à sua pele — tratando a causa, não só o que aparece. Um plano honesto sobre quanto tempo leva, e o que fazer pra manchas não voltarem.</p>
+        <span class="servico-tag">Tratamento de manchas</span>
+      </article>
+
+      <article class="servico reveal servico-destaque">
+        <svg class="servico-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12c4-4 8-4 12 0M4 16c4-4 8-4 12 0M4 8c4-4 8-4 12 0"/></svg>
+        <span class="servico-num">05</span>
+        <h3>Inchaço, peso, pós-operatório de plástica</h3>
+        <p>Toque profissional que ativa a circulação, reduz inchaço e acelera a recuperação de cirurgia plástica. Com formação específica em pré e pós-operatório — o tipo de drenagem que faz diferença no resultado final.</p>
+        <span class="servico-tag">Drenagem linfática</span>
+      </article>
+
+      <article class="servico reveal">
+        <svg class="servico-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span class="servico-num">06</span>
+        <h3>Não sabe por onde começar?</h3>
+        <p>Marque uma avaliação. Conversamos sobre sua pele, seu histórico e o que você quer alcançar — e saio com um plano claro, de quantas sessões, com qual intervalo, com que custo. Sem compromisso de fechar pacote ali.</p>
+        <span class="servico-tag">Avaliação personalizada</span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="depoimentos" id="depoimentos">
+  <div class="container">
+    <div class="depoimentos-head reveal">
+      <div>
+        <span class="eyebrow">O que dizem</span>
+        <h2>Quem já me conheceu de perto, <em>volta</em>.</h2>
+      </div>
+      <div class="google-badge">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        <span><span class="stars">★★★★★</span> Avaliações reais do Google</span>
+      </div>
+    </div>
+    <div class="depoimentos-grid">
+
+      <article class="depoimento reveal">
+        <span class="depoimento-stars">★★★★★</span>
+        <p class="depoimento-text">Encontrei a Maísa por acaso no Instagram e ela prontamente me passou contato e endereço. Marcamos o procedimento e fui atendida no mesmo dia. Gostei bastante, pois ela explica cada passo do processo, orienta como se deve proceder depois e te deixa à vontade para tirar dúvidas. O ambiente é bem localizado e tranquilo. Super indico.</p>
+        <div class="depoimento-author">
+          <div class="author-avatar">R</div>
+          <div class="author-info">
+            <span class="author-name">Ro Thomasi</span>
+            <span class="author-meta">Local Guide · Google</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="depoimento reveal">
+        <span class="depoimento-stars">★★★★★</span>
+        <p class="depoimento-text">Adorei minha limpeza de pele! Super profissional e cuidadosa. Recomendo muito!</p>
+        <div class="depoimento-author">
+          <div class="author-avatar">K</div>
+          <div class="author-info">
+            <span class="author-name">Karolaine Duminelli</span>
+            <span class="author-meta">Local Guide · Google</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="depoimento reveal">
+        <span class="depoimento-stars">★★★★★</span>
+        <p class="depoimento-text">Fiz uma limpeza de pele com a Dra. Maísa, o resultado foi simplesmente maravilhoso. Recomendo o trabalho — além de ser uma excelente profissional, é uma pessoa incrível.</p>
+        <div class="depoimento-author">
+          <div class="author-avatar">L</div>
+          <div class="author-info">
+            <span class="author-name">Lucas Feijão</span>
+            <span class="author-meta">Avaliação Google</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="depoimento reveal">
+        <span class="depoimento-stars">★★★★★</span>
+        <p class="depoimento-text">A Dra. Maísa é uma profissional maravilhosa. Atendimento impecável, repleto de carinho, cuidado e dedicação.</p>
+        <div class="depoimento-author">
+          <div class="author-avatar">A</div>
+          <div class="author-info">
+            <span class="author-name">Amanda Vieira</span>
+            <span class="author-meta">Avaliação Google</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="depoimento reveal">
+        <span class="depoimento-stars">★★★★★</span>
+        <p class="depoimento-text">Ótimo atendimento e resultado muito satisfatório. Com certeza farei novamente!</p>
+        <div class="depoimento-author">
+          <div class="author-avatar">S</div>
+          <div class="author-info">
+            <span class="author-name">Samara Guilhermina</span>
+            <span class="author-meta">Avaliação Google</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="depoimento reveal">
+        <span class="depoimento-stars">★★★★★</span>
+        <p class="depoimento-text">Sensação de rejuvenescimento. Pele com uma aparência indescritível. Super indico — amei tudo.</p>
+        <div class="depoimento-author">
+          <div class="author-avatar">O</div>
+          <div class="author-info">
+            <span class="author-name">Ozanira Alves</span>
+            <span class="author-meta">Avaliação Google</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container faq-grid">
+    <div class="faq-side reveal">
+      <span class="eyebrow">Antes de marcar</span>
+      <h2>Algumas <em>dúvidas honestas</em>.</h2>
+      <p>Reuni aqui o que mais me perguntam no primeiro contato. Se a sua dúvida não estiver na lista, me chama no WhatsApp — respondo pessoalmente, sem robô e sem script.</p>
+      <a href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida" target="_blank" rel="noopener" class="btn btn-primary">
+        Tirar minha dúvida agora
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="faq-list reveal">
+
+      <details class="faq-item">
+        <summary>
+          É seguro fazer microagulhamento ou peeling fora de uma clínica?
+          <span class="faq-toggle">+</span>
+        </summary>
+        <div class="faq-content">
+          Sim, quando feitos com profissional qualificado e protocolo correto. Trabalho com paramentação completa, materiais descartáveis e higienização rigorosa do espaço de atendimento. A indicação técnica de cada tratamento é definida na avaliação — se algum protocolo precisar de estrutura específica, te oriento sobre alternativas seguras.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          Como funciona o atendimento em casa? O que preciso preparar?
+          <span class="faq-toggle">+</span>
+        </summary>
+        <div class="faq-content">
+          Eu levo tudo: maca portátil profissional, materiais descartáveis, equipamentos e produtos. Você só precisa de um espaço pequeno e bem iluminado, idealmente próximo a uma tomada e a uma pia. Antes da primeira sessão te oriento exatamente sobre o que preparar — é simples, leva cinco minutos.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          Quanto custa? Como funciona o pagamento?
+          <span class="faq-toggle">+</span>
+        </summary>
+        <div class="faq-content">
+          Os valores dependem do que sua pele precisa — por isso a avaliação vem antes do orçamento. Trabalho com pix, débito e crédito (à vista ou parcelado). Para protocolos longos, é possível combinar formas de pagamento adaptadas ao seu fluxo. Tudo conversado com transparência, sem surpresa depois.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          Quantas sessões eu vou precisar fazer?
+          <span class="faq-toggle">+</span>
+        </summary>
+        <div class="faq-content">
+          Depende do que você quer tratar. Uma limpeza de pele pode ser pontual; um tratamento de melasma ou de cicatriz de acne costuma exigir um protocolo de várias sessões em intervalo regular. Te explico tudo na avaliação, com previsão clara antes de você decidir começar — e sem te empurrar pacote.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          Quanto tempo leva uma sessão?
+          <span class="faq-toggle">+</span>
+        </summary>
+        <div class="faq-content">
+          Entre 60 e 90 minutos, dependendo do protocolo. Como o atendimento é em casa e exclusivo, não tem corrida — você não vai sentir que estou olhando o relógio. O tempo é seu.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          Atende pós-operatório de cirurgia plástica?
+          <span class="faq-toggle">+</span>
+        </summary>
+        <div class="faq-content">
+          Sim — e essa é uma das minhas especialidades. Tenho formação específica em pré e pós-operatório de cirurgia plástica estética e reparadora. A drenagem linfática feita por profissional qualificada faz diferença visível no resultado final e na velocidade de recuperação.
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="local" id="contato">
+  <div class="container local-grid">
+    <div class="reveal">
+      <span class="eyebrow">Como funciona</span>
+      <h2>Atendimento <em>na sua casa</em>, em Criciúma, com hora marcada e atenção plena.</h2>
+      <p>Trabalho exclusivamente em domicílio. Levo a estrutura, os equipamentos e o protocolo de higiene até você — para que seu cuidado aconteça no ambiente onde você está mais à vontade.</p>
+      <div class="info-block">
+        <div class="info-item">
+          <div class="info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div>
+            <div class="info-label">01 · Primeiro contato</div>
+            <div class="info-value">Conversa pelo WhatsApp para entender sua necessidade, indicar o protocolo e tirar dúvidas.</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          </div>
+          <div>
+            <div class="info-label">02 · Agendamento</div>
+            <div class="info-value">Combinamos a data e o horário que funciona para você. Te oriento sobre o pequeno espaço necessário em casa.</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l2-2 7 7L22 7l-2-2-8 8-5-5z"/></svg>
+          </div>
+          <div>
+            <div class="info-label">03 · Atendimento</div>
+            <div class="info-value">Chego no horário com tudo organizado. Sessão completa, com higienização do espaço, materiais descartáveis e orientação pós.</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="info-label">Região atendida</div>
+            <div class="info-value">Criciúma · Santa Catarina</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="local-cta reveal">
+      <h3>Sua pele merece <em>esse tempo</em>.</h3>
+      <p>Atendo um número limitado de clientes por semana para garantir tempo e dedicação a cada uma. Vamos conversar?</p>
+      <a href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1%20Ma%C3%ADsa%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" rel="noopener" class="btn btn-whatsapp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.518 5.26l-.999 3.648 3.97-1.607z"/></svg>
+        Quero falar com a Maísa
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-divider"></div>
+  <p>© 2026 Maísa Evangelista · Fisioterapeuta Dermatofuncional · Criciúma, SC</p>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1%20Ma%C3%ADsa%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o" target="_blank" rel="noopener" class="float-wa" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.518 5.26l-.999 3.648 3.97-1.607z"/></svg>
+</a>
+
+<script>
+// Header scroll state
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Mobile menu toggle
+const menuToggle = document.getElementById('menuToggle');
+const nav = document.getElementById('nav');
+menuToggle.addEventListener('click', () => {
+  nav.classList.toggle('open');
+});
+nav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => nav.classList.remove('open'));
+});
+
+// Reveal on scroll
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+
+</body>
+</html>
